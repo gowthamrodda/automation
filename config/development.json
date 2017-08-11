@@ -1,0 +1,26 @@
+{
+  "server": {
+    "port": "4000"
+  },
+  "mongodb": {
+    "url": "localhost:27017",
+    "options": "",
+    "db": "epi",
+    "username": "",
+    "password": "",
+    "collections": {
+      "user": {
+        "name": "users",
+        "options": null
+      },
+      "testbed": {
+        "name": "testbed",
+        "options": null
+      },
+      "device": {
+        "name": "devices",
+        "options": null
+      }
+    }
+  }
+}

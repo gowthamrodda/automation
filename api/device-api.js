@@ -2,15 +2,15 @@
 
 const express = require('express');
 const router = express.Router();
-const TestBed = require('../models/testbed');
+const Device = require('../models/device');
 
-router.post('/testbeds', addTestBed);
-router.get('/testbeds', getTestBeds);
+router.post('/devices', addDevices);
+router.get('/devices', getDevices);
 
 module.exports = router;
 
 
-function addTestBed(req, res) {
+function addDevices(req, res) {
 
     if (Object.keys(req.body).length === 0) {
         console.log(`INVALID_BODY: ${JSON.parse(req.body)}`);
@@ -24,14 +24,14 @@ function addTestBed(req, res) {
 
     delete req.body._id; // make sure the client isn't injecting it's own id
 
-    let testbed = new TestBed(req.body);
+    let device = new Device(req.body);
 
-    testbed
+    device
         .save()
         .then(() => {
             return res
                 .status(200)
-                .json({message: 'TestBed added succesfully'})
+                .json({message: 'Device added succesfully'})
         })
         .catch((err) => {
             res.status(500).json({message: 'DB_ERROR_ON_SAVE', error: err});
@@ -39,7 +39,7 @@ function addTestBed(req, res) {
 
 }
 
-function getTestBeds(req, res) {
+function getDevices(req, res) {
     let queryParams = req.query;
 
     function isEmpty(obj) {
@@ -86,19 +86,20 @@ function getTestBeds(req, res) {
     if (isEmpty(queryParams)) {
 
         let init = {};
-        let testbed = new TestBed(init);
-        testbed
+        let device = new Device(init);
+        device
             .getAll()
             .then((response) => {
+                console.log(response, 'response');
                 return res
                     .status(200)
-                    .json({testbeds: response})
+                    .json({devices: response})
 
             })
             .catch((err) => {
                 return res
                     .status(500)
-                    .json({error: err, message: 'Error at getTestBeds'});
+                    .json({error: err, message: 'Error at getDevices'});
             })
     }
 }

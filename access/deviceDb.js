@@ -4,15 +4,15 @@ const config = require('./config');
 const mongo = require('./mongo');
 const ObjectId = require('mongodb').ObjectID;
 
-module.exports = TestBedDb;
+module.exports = DeviceDb;
 
-function TestBedDb() {
-    this.collectionName = (((config.mongodb || {}).collections || {}).testbed || {}).name || 'testbed';
+function DeviceDb() {
+    this.collectionName = (((config.mongodb || {}).collections || {}).device || {}).name || 'devices';
     this.options = (((config.mongodb || {}).collections || {}).device || {}).options || null;
 }
 
-TestBedDb.prototype.save = save;
-TestBedDb.prototype.findAll = findAll;
+DeviceDb.prototype.save = save;
+DeviceDb.prototype.findAll = findAll;
 
 //////////
 function save(entity) {

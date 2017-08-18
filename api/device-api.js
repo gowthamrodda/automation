@@ -50,6 +50,23 @@ function getDevices(req, res) {
         return true;
     }
 
+    if (req.query.testBed) {
+        let testBed = req.query.testBed;
+
+        let init = {};
+        let device = new Device(init);
+        device
+            .getDeviceByTestBed(testBed)
+            .then((deviceInfo) => {
+                console.log(deviceInfo, 'deviceInfo By TestBed');
+                return res
+                    .status(200)
+                    .json({deviceInfo: deviceInfo});
+            })
+            .catch((err) => console.log(err, 'Error at device testbed'));
+    }
+
+
     // if (req.query.labId) {
     //     let labId = req.query.labId;
     //     return res

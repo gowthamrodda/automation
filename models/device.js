@@ -14,6 +14,7 @@ function Device(init) {
 
 Device.prototype.save = save;
 Device.prototype.getAll = getAll;
+Device.prototype.getDeviceByTestBed = getDeviceByTestBed;
 
 function save() {
     return new Promise((resolve, reject) => {
@@ -28,6 +29,15 @@ function getAll() {
     return new Promise((resolve, reject) => {
         new deviceDb()
             .findAll()
+            .then(resolve)
+            .catch(reject);
+    });
+}
+
+function getDeviceByTestBed(testbed) {
+    return new Promise((resolve, reject) => {
+        new deviceDb()
+            .findByTestBed(testbed)
             .then(resolve)
             .catch(reject);
     });

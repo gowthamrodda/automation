@@ -13,6 +13,7 @@ function DeviceDb() {
 
 DeviceDb.prototype.save = save;
 DeviceDb.prototype.findAll = findAll;
+DeviceDb.prototype.findByTestBed = findByTestBed;
 
 //////////
 function save(entity) {
@@ -36,6 +37,22 @@ function findAll() {
             .db
             .collection(this.collectionName)
             .find({})
+            .toArray()
+            .then((data) => {
+                return resolve(data);
+            })
+            .catch(reject);
+    });
+}
+
+
+//////////
+function findByTestBed(testbed) {
+    return new Promise((resolve, reject) => {
+        mongo
+            .db
+            .collection(this.collectionName)
+            .find({"testBed": testbed})
             .toArray()
             .then((data) => {
                 return resolve(data);

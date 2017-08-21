@@ -60,3 +60,24 @@ function findByTestBed(testbed) {
             .catch(reject);
     });
 }
+
+/////////
+function update(_id,entity) {
+    return new Promise((resolve, reject) => {
+        delete entity._id;
+        mongo
+            .db
+            .collection(this.collectionName)
+            .update(
+                { "_id" : ObjectId(_id)},
+                { "$set": entity
+                }
+            )
+            .then((data) => {
+                return resolve(data);
+            })
+            .catch((error) => {
+                return reject(error);
+            });
+    });
+}

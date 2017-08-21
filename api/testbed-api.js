@@ -25,17 +25,36 @@ function addTestBed(req, res) {
     delete req.body._id; // make sure the client isn't injecting it's own id
 
     let testbed = new TestBed(req.body);
+    // let testBedId;
 
-    testbed
-        .save()
-        .then(() => {
-            return res
-                .status(200)
-                .json({message: 'TestBed added succesfully'})
-        })
-        .catch((err) => {
-            res.status(500).json({message: 'DB_ERROR_ON_SAVE', error: err});
-        })
+    if (req.body.name) {
+        testbed
+            .findByName()
+            .then((testBed) => {
+
+                if (testBed.length === 0) {
+                    testbed
+                        .save()
+                        .then(() => {
+                            return res
+                                .status(200)
+                                .json({message: 'TestBed added succesfully', status: true})
+                        })
+                        .catch((err) => {
+                            res.status(500).json({message: 'DB_ERROR_ON_SAVE', error: err});
+                        });
+
+                } else {
+                    return res
+                        .status(200)
+                        .json({message: testBed[0].name + ' TestBed already exists', status: false});
+                }
+            })
+            .catch((err) => {
+                console.log('TestBed not found @addTestBed');
+            });
+    }
+
 
 }
 

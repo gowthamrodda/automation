@@ -10,6 +10,7 @@ function TestBed(init) {
 
 TestBed.prototype.save = save;
 TestBed.prototype.getAll = getAll;
+TestBed.prototype.findByName = findByName;
 
 function save() {
     return new Promise((resolve, reject) => {
@@ -24,6 +25,15 @@ function getAll() {
     return new Promise((resolve, reject) => {
         new TestBedDb()
             .findAll()
+            .then(resolve)
+            .catch(reject);
+    });
+}
+
+function findByName() {
+    return new Promise((resolve, reject) => {
+        new TestBedDb()
+            .findByName(this.name)
             .then(resolve)
             .catch(reject);
     });

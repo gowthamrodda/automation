@@ -11,6 +11,7 @@ function TestBed(init) {
 TestBed.prototype.save = save;
 TestBed.prototype.getAll = getAll;
 TestBed.prototype.findByName = findByName;
+TestBed.prototype.deleteById = deleteById;
 
 function save() {
     return new Promise((resolve, reject) => {
@@ -37,4 +38,19 @@ function findByName() {
             .then(resolve)
             .catch(reject);
     });
+}
+
+function deleteById() {
+    return new Promise((resolve, reject) => {
+        new TestBedDb()
+            .deleteById(this._id)
+            .then((data) => {
+                return resolve(data);
+
+            })
+            .catch((err) => {
+                return reject(err);
+            });
+    });
+
 }

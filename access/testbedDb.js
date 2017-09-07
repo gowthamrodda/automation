@@ -1,21 +1,21 @@
 'use strict';
-
 const config = require('./config');
 const mongo = require('./mongo');
 const ObjectId = require('mongodb').ObjectID;
 
 module.exports = TestBedDb;
 
+TestBedDb.prototype.save = save;
+TestBedDb.prototype.findAll = findAll;
+TestBedDb.prototype.findByName = findByName;
+TestBedDb.prototype.deleteById = deleteById;
+
+
 function TestBedDb() {
     this.collectionName = (((config.mongodb || {}).collections || {}).testbed || {}).name || 'testbed';
     this.options = (((config.mongodb || {}).collections || {}).device || {}).options || null;
 }
 
-TestBedDb.prototype.save = save;
-TestBedDb.prototype.findAll = findAll;
-TestBedDb.prototype.findByName = findByName;
-
-//////////
 function save(entity) {
     return new Promise((resolve, reject) => {
         entity._id = new ObjectId();
@@ -30,7 +30,6 @@ function save(entity) {
     });
 }
 
-//////////
 function findAll() {
     return new Promise((resolve, reject) => {
         mongo
@@ -45,7 +44,6 @@ function findAll() {
     });
 }
 
-//////////
 function findByName(name) {
     return new Promise((resolve, reject) => {
         mongo
@@ -60,7 +58,6 @@ function findByName(name) {
     });
 }
 
-/////////
 function update(_id, entity) {
     return new Promise((resolve, reject) => {
         delete entity._id;
@@ -81,3 +78,24 @@ function update(_id, entity) {
             });
     });
 }
+
+function deleteById(_id) {
+    return new Promise((resolve, reject) => {
+        mongo
+            .db
+            .collection(this.collectionName)
+            .removeOne(
+                {"_id": ObjectId(_id)}
+            )
+            .then((data) => {
+                return resolve(data);
+            })
+            .catch((err) => {
+                return reject(err);
+            });
+    });
+}
+
+
+
+

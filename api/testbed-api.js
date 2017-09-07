@@ -6,6 +6,7 @@ const TestBed = require('../models/testbed');
 
 router.post('/testbeds', addTestBed);
 router.get('/testbeds', getTestBeds);
+router.delete('/testbeds', deleteTestBedById);
 
 module.exports = router;
 
@@ -120,5 +121,33 @@ function getTestBeds(req, res) {
                     .json({error: err, message: 'Error at getTestBeds'});
             })
     }
+}
+
+function deleteTestBedById(req, res) {
+    if (Object.keys(req.body).length === 0) {
+        console.log(`INVALID_BODY: ${JSON.parse(req.body)}`);
+
+        return res
+            .status(422)
+            .json({
+                message: 'INVALID_BODY'
+            });
+    }
+
+    let testbed = new TestBed(req.body);
+    // let testBedId;
+
+    if (req.body._id) {
+        testbed
+            .deleteById()
+            .then((status) => {
+                return res
+                    .status(200)
+                    .json({result: status, status: true});
+            })
+            .catch((err) => console.log(err));
+    }
+
+
 }
 

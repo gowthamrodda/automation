@@ -14,6 +14,7 @@ function DeviceDb() {
 DeviceDb.prototype.save = save;
 DeviceDb.prototype.findAll = findAll;
 DeviceDb.prototype.findByTestBed = findByTestBed;
+DeviceDb.prototype.updateById = updateById;
 
 //////////
 function save(entity) {
@@ -62,15 +63,16 @@ function findByTestBed(testbed) {
 }
 
 /////////
-function update(_id,entity) {
+function updateById(_id, entity) {
     return new Promise((resolve, reject) => {
         delete entity._id;
         mongo
             .db
             .collection(this.collectionName)
             .update(
-                { "_id" : ObjectId(_id)},
-                { "$set": entity
+                {"_id": ObjectId(_id)},
+                {
+                    "$set": entity
                 }
             )
             .then((data) => {

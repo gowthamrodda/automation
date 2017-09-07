@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e2e0dcee-a980-4e46-aa4c-7fd0c3264324" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/access/testbedDb.js" afterPath="$PROJECT_DIR$/access/testbedDb.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/api/testbed-api.js" afterPath="$PROJECT_DIR$/api/testbed-api.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/models/testbed.js" afterPath="$PROJECT_DIR$/models/testbed.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/access/deviceDb.js" afterPath="$PROJECT_DIR$/access/deviceDb.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/api/device-api.js" afterPath="$PROJECT_DIR$/api/device-api.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/models/device.js" afterPath="$PROJECT_DIR$/models/device.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -19,11 +18,26 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="testbed-api.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/api/testbed-api.js">
+      <file leaf-file-name="device-api.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/api/device-api.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="508">
-              <caret line="142" column="31" lean-forward="false" selection-start-line="142" selection-start-column="31" selection-end-line="142" selection-end-column="31" />
+            <state relative-caret-position="396">
+              <caret line="148" column="23" lean-forward="false" selection-start-line="148" selection-start-column="23" selection-end-line="148" selection-end-column="23" />
+              <folding>
+                <marker date="1504802606000" expanded="true" signature="859:876" ph="{...}" />
+                <marker date="1504802606000" expanded="true" signature="1410:1435" ph="{...}" />
+                <marker date="1504802606000" expanded="true" signature="2900:2925" ph="{...}" />
+                <marker date="1504802606000" expanded="true" signature="3104:3237" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="device.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/models/device.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="588">
+              <caret line="48" column="22" lean-forward="true" selection-start-line="48" selection-start-column="22" selection-end-line="48" selection-end-column="22" />
               <folding />
             </state>
           </provider>
@@ -32,43 +46,8 @@
       <file leaf-file-name="deviceDb.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/access/deviceDb.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="device-api.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/api/device-api.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-114">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding>
-                <marker date="1503079825000" expanded="true" signature="814:831" ph="{...}" />
-                <marker date="1503079825000" expanded="true" signature="1365:1390" ph="{...}" />
-                <marker date="1503079825000" expanded="true" signature="2855:2880" ph="{...}" />
-                <marker date="1503079825000" expanded="true" signature="3059:3192" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="config.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/access/config.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="development.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config/development.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="256">
-              <caret line="16" column="26" lean-forward="false" selection-start-line="16" selection-start-column="26" selection-end-line="16" selection-end-column="26" />
+            <state relative-caret-position="-420">
+              <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -77,18 +56,8 @@
       <file leaf-file-name="testbed.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/models/testbed.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="540">
+            <state relative-caret-position="736">
               <caret line="46" column="29" lean-forward="false" selection-start-line="46" selection-start-column="29" selection-end-line="46" selection-end-column="29" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="testbedDb.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/access/testbedDb.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="607">
-              <caret line="92" column="29" lean-forward="false" selection-start-line="92" selection-start-column="29" selection-end-line="92" selection-end-column="29" />
               <folding />
             </state>
           </provider>
@@ -105,6 +74,9 @@
         <option value="$PROJECT_DIR$/api/testbed-api.js" />
         <option value="$PROJECT_DIR$/models/testbed.js" />
         <option value="$PROJECT_DIR$/access/testbedDb.js" />
+        <option value="$PROJECT_DIR$/access/deviceDb.js" />
+        <option value="$PROJECT_DIR$/api/device-api.js" />
+        <option value="$PROJECT_DIR$/models/device.js" />
       </list>
     </option>
   </component>
@@ -167,7 +139,7 @@
             <path>
               <item name="second-project" type="b2602c69:ProjectViewProjectNode" />
               <item name="second-project" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
+              <item name="models" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -207,12 +179,12 @@
       <option name="presentableId" value="Default" />
       <updated>1504718701939</updated>
       <workItem from="1504718703303" duration="3663000" />
-      <workItem from="1504797478120" duration="2401000" />
+      <workItem from="1504797478120" duration="4386000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6064000" />
+    <option name="totallyTimeSpent" value="8049000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -296,55 +268,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/development.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="256">
-          <caret line="16" column="26" lean-forward="false" selection-start-line="16" selection-start-column="26" selection-end-line="16" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/access/mongo.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/access/deviceDb.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api/device-api.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-114">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1503079825000" expanded="true" signature="814:831" ph="{...}" />
-            <marker date="1503079825000" expanded="true" signature="1365:1390" ph="{...}" />
-            <marker date="1503079825000" expanded="true" signature="2855:2880" ph="{...}" />
-            <marker date="1503079825000" expanded="true" signature="3059:3192" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api/testbed-api.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="508">
-          <caret line="142" column="31" lean-forward="false" selection-start-line="142" selection-start-column="31" selection-end-line="142" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/models/testbed.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="46" column="29" lean-forward="false" selection-start-line="46" selection-start-column="29" selection-end-line="46" selection-end-column="29" />
           <folding />
         </state>
       </provider>
@@ -354,6 +281,59 @@
         <state relative-caret-position="607">
           <caret line="92" column="29" lean-forward="false" selection-start-line="92" selection-start-column="29" selection-end-line="92" selection-end-column="29" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/development.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="256">
+          <caret line="16" column="26" lean-forward="false" selection-start-line="16" selection-start-column="26" selection-end-line="16" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/testbed.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="736">
+          <caret line="46" column="29" lean-forward="false" selection-start-line="46" selection-start-column="29" selection-end-line="46" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/testbed-api.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2272">
+          <caret line="142" column="31" lean-forward="false" selection-start-line="142" selection-start-column="31" selection-end-line="142" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/device.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="588">
+          <caret line="48" column="22" lean-forward="true" selection-start-line="48" selection-start-column="22" selection-end-line="48" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/access/deviceDb.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-420">
+          <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/device-api.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="148" column="23" lean-forward="false" selection-start-line="148" selection-start-column="23" selection-end-line="148" selection-end-column="23" />
+          <folding>
+            <marker date="1504802606000" expanded="true" signature="859:876" ph="{...}" />
+            <marker date="1504802606000" expanded="true" signature="1410:1435" ph="{...}" />
+            <marker date="1504802606000" expanded="true" signature="2900:2925" ph="{...}" />
+            <marker date="1504802606000" expanded="true" signature="3104:3237" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>

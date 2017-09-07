@@ -6,6 +6,7 @@ const Device = require('../models/device');
 
 router.post('/devices', addDevices);
 router.get('/devices', getDevices);
+router.put('/device/:id', updateDeviceByid);
 
 module.exports = router;
 
@@ -119,5 +120,47 @@ function getDevices(req, res) {
                     .json({error: err, message: 'Error at getDevices'});
             })
     }
+}
+
+function updateDeviceByid(req, res) {
+    if (!req.params.id) {
+        console.log(`REQUIRED ID: ${JSON.parse(req.params)}`);
+
+        return res
+            .status(422)
+            .json({
+                message: 'INVALID_PARAMS'
+            });
+    }
+    if (Object.keys(req.body).length === 0) {
+        console.log(`INVALID_BODY: ${JSON.parse(req.body)}`);
+
+        return res
+            .status(422)
+            .json({
+                message: 'INVALID_BODY'
+            });
+    }
+    let id = req.params.id || '';
+    const body = req.body;
+    let device = new Device(body);
+
+    device
+        .updateById(id)
+        .then((resp) => {
+            return res
+                .status(200)
+                .json(resp);
+        })
+        .catch((err) => {
+            return res
+                .status(422)
+                .json({
+                    message: 'Error at updateById',
+                    error: err
+                });
+        })
+
+
 }
 

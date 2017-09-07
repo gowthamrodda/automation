@@ -15,6 +15,7 @@ function Device(init) {
 Device.prototype.save = save;
 Device.prototype.getAll = getAll;
 Device.prototype.getDeviceByTestBed = getDeviceByTestBed;
+Device.prototype.updateById = updateById;
 
 function save() {
     return new Promise((resolve, reject) => {
@@ -40,5 +41,19 @@ function getDeviceByTestBed(testbed) {
             .findByTestBed(testbed)
             .then(resolve)
             .catch(reject);
+    });
+}
+
+function updateById(id) {
+    return new Promise((resolve, reject) => {
+        new deviceDb()
+            .updateById(id, this)
+            .then((data) => {
+                return resolve(data);
+            })
+            .catch((err) => {
+                return reject(err);
+            });
+
     });
 }

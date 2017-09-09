@@ -15,6 +15,7 @@ DeviceDb.prototype.save = save;
 DeviceDb.prototype.findAll = findAll;
 DeviceDb.prototype.findByTestBed = findByTestBed;
 DeviceDb.prototype.updateById = updateById;
+DeviceDb.prototype.deleteById = deleteById;
 
 //////////
 function save(entity) {
@@ -80,6 +81,24 @@ function updateById(_id, entity) {
             })
             .catch((error) => {
                 return reject(error);
+            });
+    });
+}
+
+////////
+function deleteById(_id) {
+    return new Promise((resolve, reject) => {
+        mongo
+            .db
+            .collection(this.collectionName)
+            .removeOne(
+                {"_id": ObjectId(_id)}
+            )
+            .then((data) => {
+                return resolve(data);
+            })
+            .catch((err) => {
+                return reject(err);
             });
     });
 }

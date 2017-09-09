@@ -7,6 +7,7 @@ const Device = require('../models/device');
 router.post('/devices', addDevices);
 router.get('/devices', getDevices);
 router.put('/device/:id', updateDeviceByid);
+router.delete('/device/:id', deleteDeviceByid);
 
 module.exports = router;
 
@@ -161,6 +162,34 @@ function updateDeviceByid(req, res) {
                 });
         })
 
+
+}
+
+function deleteDeviceByid(req, res) {
+    if (!req.params.id) {
+        console.log(`REQUIRED ID: ${JSON.parse(req.params)}`);
+
+        return res
+            .status(422)
+            .json({
+                message: 'INVALID_PARAMS'
+            });
+    }
+    let id = req.params.id || '';
+    const body = {};
+    let device = new Device(body);
+    device
+        .deleteById(id)
+        .then((status) => {
+            return res
+                .status(200)
+                .json({result: status, status: true});
+        })
+        .catch((err) => {
+            return res
+                .status(400)
+                .json({result: err, status: false});
+        });
 
 }
 

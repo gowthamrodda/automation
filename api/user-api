@@ -1,0 +1,43 @@
+let request = require('request');
+
+const express = require('express');
+const router = express.Router();
+const User = require('../models/user');
+
+router.post('/users', getUsers);
+
+module.exports = router;
+
+function getUsers(req, res) {
+    if (!req.body) {
+        console.log(`REQUIRED BODY: ${JSON.parse(req.body)}`);
+
+        return res
+            .status(422)
+            .json({
+                message: 'INVALID_BODY'
+            });
+    }
+
+    let body = req.body;
+    let init = body;
+
+    let user = new User(init);
+    user
+        .getUserByUserName()
+        .then((resp) => {
+            if (resp.length > 0) {
+                res
+                    .status(200)
+                    .json({message: resp, status: true})
+            } else {
+                res
+                    .status(400)
+                    .json({message: 'Sorry, User not found!', status: false})
+            }
+
+        })
+        .catch((err) => {
+            console.log('Error', err);
+        })
+}
